@@ -22,7 +22,7 @@ const nunjucks = require('nunjucks');
 const path = require('path');
 const rimraf = require('rimraf');
 
-const configData = require('../example-data/configs.json');
+const configData = require('../data/configs.json');
 const template = path.join(__dirname, '..', 'templates', 'index.njk');
 const outputFileName = 'config-catalog.md';
 const outputPath = path.join(__dirname, '..', 'dist');

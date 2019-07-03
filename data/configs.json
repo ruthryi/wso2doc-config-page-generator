@@ -13,6 +13,7 @@
                             "type": "string",
                             "required": true,
                             "default": "\"localhost\"",
+                            "possible": "\"127.0.0.1\",\"localhost\",\"<any-ip-address>\"",
                             "description": "The hostname of the WSO2 EI server instance."
                         },
                         {
