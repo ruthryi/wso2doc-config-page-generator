@@ -1,0 +1,64 @@
+{% for config in configs %}
+<div class="mb-config-catalog">
+    <section class="title">
+        <div class="mb-config-options">    
+            <h2 id="{{ config.title | lower | replace(" ", "-") }}">{{ config.title | safe }}</h2>
+        </div>
+        <div class="mb-config-example"></div>
+    </section>
+    <section>
+        <div class="mb-config-options">
+            <div class="superfences-tabs">
+                <input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked">
+                <label for="__tab_1_0">Bash</label>
+                <div class="superfences-content">
+                    <div class="mb-config-example">
+<pre><code class="toml">{% include "../data/" + config.exampleFile %}</code></pre>
+                    </div>
+                </div>
+                <input name="__tabs_2" type="radio" id="__tab_2_0">
+                <label for="__tab_2_0">Bash</label>
+                <div class="superfences-content">
+                    <div class="codehilite" id="__code_12">
+                        <pre>
+                            <span></span>
+                            <span class="ch">#!/bin/bash</span>
+                            <span class="nb">echo</span> <span class="s2">"Hello world!"</span>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-config">
+                {% for option in config.options %}<div class="config-wrap">
+                        <code>[{{ option.name }}]</code>
+                        {% if option.required %}<span class="badge-required">Required</span>{% endif %}
+                        <p>
+                            {{ option.description | safe }}
+                        </p>
+                    </div>
+                    <div class="params-wrap">
+                        {% for param in option.params %}<div class="param">
+                                <div class="param-name">
+                                  <span class="param-name-wrap"> <code>{{ param.name }}</code> </span>
+                                </div>
+                                <div class="param-info">
+                                    <div>
+                                        <p>
+                                            <span class="param-type string"> {{ param.type }} </span>
+                                            {% if param.required %}<span class="badge-required">Required</span>{% endif %}
+                                        </p>
+                                        <div class="param-default">
+                                            <span class="param-default-value"><code>{{ param.default | safe }}</code></span>
+                                        </div>
+                                    </div>
+                                    <div class="param-description">
+                                        <p>{{ param.description | safe }}</p>
+                                    </div>
+                                </div>
+                            </div>{% endfor %}
+                    </div>{% endfor %}
+            </div>
+        </div>
+    </section>
+</div>
+{% endfor %}
