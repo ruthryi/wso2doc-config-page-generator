@@ -7,7 +7,7 @@
         <div class="mb-config-options">
             <div class="superfences-tabs">
             <input name="__tabs_1" type="checkbox" id="__tab_1_0">
-                <label class="tab-selector" for="__tab_1_0"><i class="fa fa-code"></i> Example</label>
+                <label class="tab-selector" for="__tab_1_0"><i class="fa fa-code"></i></label>
                 <div class="superfences-content">
                     <div class="mb-config-example">
 <pre><code class="toml">{% include "../data/" + config.exampleFile %}</code></pre>
@@ -34,10 +34,10 @@
                                             {% if param.required %}<span class="badge-required">Required</span>{% endif %}
                                         </p>
                                         <div class="param-default">
-                                            <span class="param-default-value">Default: <code>{{ param.default | safe }}</code></span>
+                                            <span class="param-default-value">Default: <code>{{ param.default }}</code></span>
                                         </div>
                                         {%if param.possible %}<div class="param-possible">
-                                            <span class="param-possible-values">Possible Values: <code>{{ param.possible | safe }}</code></span>
+                                            <span class="param-possible-values">Possible Values: <code>{{ param.possible }}</code></span>
                                         </div>{% endif %}
                                     </div>
                                     <div class="param-description">
