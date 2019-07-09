@@ -6,4 +6,4 @@ This is a tool to generate markdown file from a given json content for WSO2 docs
 
 1. Clone the repo and run `npm install`.
 2. Open `data\config.json` file add your content.
-3. Come back to root folder and run command `npm run install`. and the generated file will be in `dist/` folder.
+3. Come back to root folder and run command `npm run build`. and the generated file will be in `dist/` folder.
