@@ -8,8 +8,8 @@
         <div class="mb-config-options">
             <div class="superfences-tabs">
             {% set tabid = tabid + 1 %}
-            <input name="{{tabid}}" type="checkbox" id="{{tabid}}">
-                <label class="tab-selector" for="{{tabid}}"><i class="icon fa fa-code"></i></label>
+            <input name="{{tabid}}" type="checkbox" id="_tab_{{tabid}}">
+                <label class="tab-selector" for="_tab_{{tabid}}"><i class="icon fa fa-code"></i></label>
                 <div class="superfences-content">
                     <div class="mb-config-example">
 <pre><code class="toml">{% include "../data/" + config.exampleFile %}</code></pre>
