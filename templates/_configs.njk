@@ -1,3 +1,4 @@
+{% set tabid = 1 %}
 {% for config in configs %}
 
 ## {{ config.title | safe }}
@@ -6,8 +7,9 @@
     <section>
         <div class="mb-config-options">
             <div class="superfences-tabs">
-            <input name="__tabs_1" type="checkbox" id="__tab_1_0">
-                <label class="tab-selector" for="__tab_1_0"><i class="icon fa fa-code"></i></label>
+            {% set tabid = tabid + 1 %}
+            <input name="{{tabid}}" type="checkbox" id="_tab_{{tabid}}">
+                <label class="tab-selector" for="_tab_{{tabid}}"><i class="icon fa fa-code"></i></label>
                 <div class="superfences-content">
                     <div class="mb-config-example">
 <pre><code class="toml">{% include "../data/" + config.exampleFile %}</code></pre>
