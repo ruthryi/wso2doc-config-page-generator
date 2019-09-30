@@ -1,12 +1,46 @@
 {
     "configs" : [
         {
+            "title": "Super admin configurations",
+            "options": [
+                {
+                    "name": "super_admin",
+                    "required": true,
+                    "description": "This includes the configurations related to the super admin user.",
+                    "params": [
+                        {
+                            "name": "username",
+                            "type": "string",
+                            "required": false,
+                            "default": "admin",
+                            "description": "super admin username"
+                        },
+                        {
+                            "name": "password",
+                            "type": "string",
+                            "required": false,
+                            "default": "admin",
+                            "description": "super admin password"
+                        },
+                        {
+                            "name": "create_admin_account",
+                            "type": "string",
+                            "required": false,
+                            "default": "TRUE",
+                            "description": "If this is true whether to create a new user with the super admin details given."
+                        }
+                    ]
+                }
+            ],
+            "exampleFile": "_super-admin.toml"
+        },
+        {
             "title": "Connecting to the primary data store",
             "options": [
                 {
                     "name": "server",
                     "required": true,
-                    "description": "You can count on it.This toml header groups the parameters that define the server node details.",
+                    "description": "This groups the parameters that define the server node details.",
                     "params": [
                         {
                             "name": "hostname",
@@ -14,7 +48,7 @@
                             "required": true,
                             "default": "\"localhost\"",
                             "possible": "\"127.0.0.1\",\"localhost\",\"<any-ip-address>\"",
-                            "description": "The hostname of the WSO2 EI server instance."
+                            "description": "The hostname of the WSO2 API-M server instance."
                         },
                         {
                             "name": "node_ip",
@@ -39,23 +73,23 @@
                         {
                             "name": "username",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "admin",
                             "description": "super admin username"
                         },
                         {
                             "name": "password",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "admin",
                             "description": "super admin password"
                         },
                         {
                             "name": "create_admin_account",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "TRUE",
-                            "description": "Specifies whether to insert defined super admin to the userstore or not"
+                            "description": "Set this to 'true'  to create a new user with the super admin credentials given."
                         }
                     ]
                 }
@@ -63,7 +97,7 @@
             "exampleFile": "_super-admin.toml"
         },
         {
-            "title": "API-M DB configs",
+            "title": "Database configurations",
             "options": [
                 {
                     "name": "database.apim_db",
@@ -76,7 +110,7 @@
                             "required": "TRUE",
                             "default": "h2",
                             "possible": "mysql,h2,mssql,postgre,oracle,db2",
-                            "description": "DB vendor"
+                            "description": "Database vendor"
                         },
                         {
                             "name": "hostname",
@@ -96,7 +130,7 @@
                         {
                             "name": "url",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "jdbc:h2:repository/database/WSO2AM_DB;DB_CLOSE_ON_EXIT=FALSE",
                             "description": "connection url - required when you use the h2 db. You have to add the URL if you need to use the JDBC properties listed below. Otherwise it is optional. "
                         },
@@ -105,54 +139,54 @@
                             "type": "string",
                             "required": "TRUE",
                             "default": "wso2carbon",
-                            "description": "The username used to connect to the DB"
+                            "description": "The username used to create a connection to the database"
                         },
                         {
                             "name": "password",
                             "type": "string",
                             "required": "TRUE",
                             "default": "wso2carbon",
-                            "description": "The password used for the DB connection"
+                            "description": "The password used to create a connection to the database"
                         },
                         {
                             "name": "*validationQuery",
                             "type": "string",
                             "required": "TRUE",
                             "default": "SELECT 1",
-                            "description": "The value changes according to the DB query"
+                            "description": "  The value changes according to the Database query"
                         },
                         {
                             "name": "pool_options.maxActive",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "50",
-                            "description": "Tuning parameters. Change according to the preferred DB."
+                            "description": "Tuning parameters. Change according to the preferred database."
                         },
                         {
                             "name": "pool_options.maxWait",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "60000",
                             "description": ""
                         },
                         {
                             "name": "pool_options.testOnBorrow",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "TRUE",
                             "description": ""
                         },
                         {
                             "name": "pool_options.validationInterval",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "30000",
                             "description": ""
                         },
                         {
                             "name": "pool_options.defaultAutoCommit",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "TRUE",
                             "description": ""
                         }
@@ -172,29 +206,29 @@
                         {
                             "name": "type",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "h2",
-                            "possible": "mysql,h2",
-                            "description": "DB type"
+                            "possible": "mysql,h2,mssql,postgre,oracle,db2",
+                            "description": "Database type"
                         },
                         {
                             "name": "url",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "jdbc:h2:repository/database/WSO2SHARED_DB;DB_CLOSE_ON_EXIT=FALSE",
                             "description": "connection url"
                         },
                         {
                             "name": "username",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "wso2carbon",
                             "description": "username"
                         },
                         {
                             "name": "password",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "wso2carbon",
                             "description": "password"
                         }
@@ -217,28 +251,20 @@
                             "required": "TRUE",
                             "default": "FALSE",
                             "possible": "true, false",
-                            "description": "Enbale JWT"
+                            "description": "Enable JWT."
                         },
                         {
                             "name": "encoding",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "base64",
-                            "possible": "base64",
-                            "description": "Use default JWT generator"
-                        },
-                        {
-                            "name": "encoding",
-                            "type": "string",
-                            "required": "FALSE",
-                            "default": "",
-                            "possible": "base64url",
-                            "description": "Use url-safe JWT generator"
+                            "possible": "base64,base64url",
+                            "description": "Use default JWT generator. Use url-safe JWT generator if it is base64url."
                         },
                         {
                             "name": "generator_impl",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "",
                             "possible": "",
                             "description": "can be define custom generation implmetation. If this is defnied apim.jwt.encoding will be ignored. It should be the fully-qualified class name. e.g., <take it from doc>"
@@ -246,14 +272,14 @@
                         {
                             "name": "header",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "X-JWT-Assertion",
                             "description": "The HTTP header name used to send the JWT generated prev."
                         },
                         {
                             "name": "enable_user_claims",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "FALSE",
                             "possible": "FALSE",
                             "description": "No user store claims included in the JWT if false. "
@@ -261,7 +287,7 @@
                         {
                             "name": "enable_user_claims",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "FALSE",
                             "possible": "TRUE",
                             "description": "THe default user claims will be added to the JWT"
@@ -269,7 +295,7 @@
                         {
                             "name": "claims_extractor_impl",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "",
                             "possible": "",
                             "description": "Can define custom claim retiriver implmentation and need to apim.jwt.enable_user_claims=true. It should be the fully-qualified class name."
@@ -277,7 +303,7 @@
                         {
                             "name": "claim_dialect",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "http://wso2.org/claims",
                             "possible": "",
                             "description": "Defined claim set under user management. Refer IS doc."
@@ -285,7 +311,7 @@
                         {
                             "name": "signing_algorithm",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "SHA256withRSA",
                             "possible": "NONE",
                             "description": "Specify NONE to disbale the sigining."
@@ -386,7 +412,7 @@
                         {
                             "name": "http_endpoint",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "no default value",
                             "possible": "",
                             "description": "http://localhost:8280/"
@@ -407,7 +433,7 @@
                         {
                             "name": "enable",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "TRUE",
                             "possible": "",
                             "description": "enable gateway token cache. Default recommendation is to specify this. The token validation request checks with the cached value."
@@ -415,7 +441,7 @@
                         {
                             "name": "expiry_time",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "15 m",
                             "possible": "",
                             "description": "set cache expirary time. m for minutes. Recommended value for 15 minutes."
@@ -436,7 +462,7 @@
                         {
                             "name": "enable",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "TRUE",
                             "possible": "",
                             "description": "enable gateway resource cache. Caches the API resources at the GW. Expires in 15 mins."
@@ -457,7 +483,7 @@
                         {
                             "name": "enable",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "FALSE",
                             "possible": "",
                             "description": "enable KM token cache. The token validation request checks with the ached value at the KM. If the GW caching is on it is recommended to switch this off. Please see [Best Practices]"
@@ -465,7 +491,7 @@
                         {
                             "name": "expiry_time",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "15 m",
                             "possible": "",
                             "description": "set the cache expiry time"
@@ -486,7 +512,7 @@
                         {
                             "name": "enable",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "FALSE",
                             "possible": "",
                             "description": "Enable cache for recently added apis in the API Store - Check with the new UI. Expires in 15 mins by default"
@@ -507,7 +533,7 @@
                         {
                             "name": "enable",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "TRUE",
                             "possible": "",
                             "description": "Enabel cache for scopes. Expires in 15 mins by default."
@@ -528,7 +554,7 @@
                         {
                             "name": "enable",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "TRUE",
                             "possible": "",
                             "description": "Enable cache for publisher roles. Expires in 15 mins by default"
@@ -549,7 +575,7 @@
                         {
                             "name": "enable",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "TRUE",
                             "possible": "",
                             "description": "Enable cache for publisher roles. Expires in 15 mins by default"
@@ -570,7 +596,7 @@
                         {
                             "name": "enable",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "TRUE",
                             "possible": "",
                             "description": "Enable JWT claim cache. The user's claims used to create the JWT are cached."
@@ -578,7 +604,7 @@
                         {
                             "name": "expiry_time",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "Not defined",
                             "possible": "",
                             "description": "Set the cache expirary time. Would be same as the JWT expiry time."
@@ -599,7 +625,7 @@
                         {
                             "name": "expiry_time",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "2m",
                             "possible": "",
                             "description": "Set tag cache expirary time. Check with the new UI. Disabled when not defined."
@@ -652,7 +678,7 @@
                         {
                             "name": "receiver_username",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "use apim.analytics.username",
                             "possible": "",
                             "description": "if specific user need to used for the event publishing"
@@ -660,7 +686,7 @@
                         {
                             "name": "receiver_password",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "use apim.analytics.password",
                             "possible": "",
                             "description": "if specific user need to used for the event publishing"
@@ -668,7 +694,7 @@
                         {
                             "name": "store_api_username",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "use apim.analytics.username",
                             "possible": "",
                             "description": "if specific user need to used for access Store rest api"
@@ -676,7 +702,7 @@
                         {
                             "name": "store_api_password",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "use apim.analytics.password",
                             "possible": "",
                             "description": "if specific user need to used for access rest api"
@@ -684,7 +710,7 @@
                         {
                             "name": "event_publisher_impl",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "",
                             "possible": "",
                             "description": "if the event_publisher_type is custom, the custom publisher needs to be definied to this value 'event_publisher_impl = \"org.wso2.carbon.apimgt.usage.publisher.APIMgtUsageDataBridgeDataPublisher\""
@@ -692,7 +718,7 @@
                         {
                             "name": "publish_response_size",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "FALSE",
                             "possible": "",
                             "description": "enable whather to publisher response size to analytics. Size is bytes."
@@ -713,7 +739,7 @@
                         {
                             "name": "",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "",
                             "possible": "",
                             "description": "Define analytics nodes that the API Manager will connect to, as an array. If there are mutiple node, need to define this configuration mutiple times."
@@ -737,7 +763,7 @@
                         {
                             "name": "type",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "no default value",
                             "possible": "",
                             "description": "loadbalance or failover"
@@ -766,7 +792,7 @@
                         {
                             "name": "username",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "user super admin username",
                             "possible": "",
                             "description": "Given previously. - The admin username of the KM."
@@ -774,7 +800,7 @@
                         {
                             "name": "password",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "user super admin password",
                             "possible": "",
                             "description": ""
@@ -782,7 +808,7 @@
                         {
                             "name": "pool.init_idle_capacity",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "50",
                             "possible": "",
                             "description": "Min no of clients created to connect to the key manager."
@@ -790,7 +816,7 @@
                         {
                             "name": "pool.max_idle",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "100",
                             "possible": "",
                             "description": "Max no of clients created to connect to the key manager."
@@ -798,7 +824,7 @@
                         {
                             "name": "key_validation_handler_type",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "default",
                             "possible": "default or custom",
                             "description": "If custom, then provide the value below"
@@ -806,7 +832,7 @@
                         {
                             "name": "key_validation_handler_impl",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "",
                             "possible": "",
                             "description": "Can provide custom key validation handler implmentation. Need to set key_validation_handler_type to custom"
@@ -827,7 +853,7 @@
                         {
                             "name": "enable_outbound_auth_header",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "FALSE",
                             "possible": "",
                             "description": "If TRUE, sends Auth header to the backend as received from the client."
@@ -835,7 +861,7 @@
                         {
                             "name": "auth_header",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "Authorization",
                             "possible": "Any custom value",
                             "description": ""
@@ -843,7 +869,7 @@
                         {
                             "name": "revoke_endpoint",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "https://localhost:8243/revoke",
                             "possible": "",
                             "description": "Token revocation endpoint used in the API Store"
@@ -851,7 +877,7 @@
                         {
                             "name": "enable_token_encryption",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "FALSE",
                             "possible": "",
                             "description": "if true - token stored in the database will be encrypted/decrypted when reading and storing. RSA/ECB/OAEPwithSHA1andMGF1PaddingIf FALSE - Setting Up OAuth Token Encryption | Extension Points for OAuth - IS Docs"
@@ -859,7 +885,7 @@
                         {
                             "name": "enable_token_hashing",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "FALSE",
                             "possible": "",
                             "description": "Similar to prev. Get desc from  IS docs"
@@ -867,7 +893,7 @@
                         {
                             "name": "white_listed_scopes",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "[\"^device_.*,openid\"]",
                             "possible": "",
                             "description": "List of whitelisted scopes. Take desc from Key Concepts page."
@@ -896,7 +922,7 @@
                         {
                             "name": "enable_application_sharing",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "FALSE",
                             "possible": "",
                             "description": "Enable application sharing according to the claims."
@@ -904,7 +930,7 @@
                         {
                             "name": "application_sharing_type",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "If the config is not mentioned, then undefined.default",
                             "possible": "default, saml",
                             "description": "Use the application_sharing_impl as default implmentationIf it is saml, the group extractor extracts the claims to group the applications from the saml response."
@@ -912,7 +938,7 @@
                         {
                             "name": "application_sharing_impl",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "Based on the application sharing type.",
                             "possible": "",
                             "description": "Need to define if the application_sharing_type is custom. If both application_sharing_type and application_sharing_impl is defined, take value from application_sharing_impl."
@@ -920,7 +946,7 @@
                         {
                             "name": "login_username_case_insensitive",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "TRUE",
                             "possible": "",
                             "description": "Check with new UI"
@@ -928,7 +954,7 @@
                         {
                             "name": "display_multiple_versions",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "FALSE",
                             "possible": "",
                             "description": "If TRUE displays all the versions of the API under the API listing (and search depending on the new UI)"
@@ -936,7 +962,7 @@
                         {
                             "name": "display_deprecated_apis",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "FALSE",
                             "possible": "",
                             "description": "If TRUE displays all the deprecated APIs under the API listing (and search depending on the new UI)"
@@ -944,7 +970,7 @@
                         {
                             "name": "enable_comments",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "TRUE",
                             "possible": "",
                             "description": "Can comment on the API"
@@ -952,7 +978,7 @@
                         {
                             "name": "enable_ratings",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "TRUE",
                             "possible": "",
                             "description": "Enable rating the API with a star-based rating"
@@ -960,7 +986,7 @@
                         {
                             "name": "enable_forum",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "TRUE",
                             "possible": "",
                             "description": "^"
@@ -968,7 +994,7 @@
                         {
                             "name": "application_sharing_claim",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "http://wso2.org/claims/organization",
                             "possible": "",
                             "description": "The user claim used to group the applications."
@@ -989,7 +1015,7 @@
                         {
                             "name": "enable_api_doc_visibility",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "FALSE",
                             "possible": "",
                             "description": ""
@@ -1010,7 +1036,7 @@
                         {
                             "name": "enable",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "TRUE",
                             "possible": "",
                             "description": "default configuration in the toml"
@@ -1018,7 +1044,7 @@
                         {
                             "name": "allow_origins",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "*",
                             "possible": "",
                             "description": "Get desc online. "
@@ -1026,7 +1052,7 @@
                         {
                             "name": "allow_methods",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
                             "possible": "",
                             "description": ""
@@ -1034,7 +1060,7 @@
                         {
                             "name": "allow_headers",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "authorization,Access-Control-Allow-Origin,Content-Type,SOAPAction",
                             "possible": "",
                             "description": ""
@@ -1042,7 +1068,7 @@
                         {
                             "name": "allow_credentials",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "FALSE",
                             "possible": "",
                             "description": ""
@@ -1063,7 +1089,7 @@
                         {
                             "name": "event_type",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "Binary",
                             "possible": "Thrift",
                             "description": "Binary - Uses the binary transport. Recommended.Thrift - Uses thrift tranport"
@@ -1071,7 +1097,7 @@
                         {
                             "name": "receiver_url",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "if None of this is defined consider it as tcp://${carbon.local.ip}:${receiver.url.port}",
                             "possible": "",
                             "description": "Define traffic manager connection url inline. If none of this is defined consider it as tcp://${carbon.local.ip}:${receiver.url.port}"
@@ -1079,7 +1105,7 @@
                         {
                             "name": "receiver_url",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "",
                             "possible": "",
                             "description": "Define array of traffic manager connections"
@@ -1100,7 +1126,7 @@
                         {
                             "name": "username",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "super username",
                             "possible": "",
                             "description": "TM username"
@@ -1108,7 +1134,7 @@
                         {
                             "name": "password",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "super user password",
                             "possible": "",
                             "description": "TM password"
@@ -1116,7 +1142,7 @@
                         {
                             "name": "receiver_username",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "super username",
                             "possible": "",
                             "description": "receiver username if it is diffrent. The username of the receiver configured on the TM."
@@ -1124,7 +1150,7 @@
                         {
                             "name": "receiver_password",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "super user password",
                             "possible": "",
                             "description": "receiver password if it is diffrent"
@@ -1132,7 +1158,7 @@
                         {
                             "name": "policy_deploy.username",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "super username",
                             "possible": "",
                             "description": "user name for policy deploy. if it is diffrentReceiver configured for deploying policies."
@@ -1140,7 +1166,7 @@
                         {
                             "name": "policy_deploy.password",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "super user password",
                             "possible": "",
                             "description": "user password for policy deploy. if it is diffrent"
@@ -1148,7 +1174,7 @@
                         {
                             "name": "jms.username",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "super username",
                             "possible": "",
                             "description": "JMS connection user if it is diffrent"
@@ -1156,7 +1182,7 @@
                         {
                             "name": "jms.password",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "super user password",
                             "possible": "",
                             "description": "JMS connection password if it is diffrent"
@@ -1164,7 +1190,7 @@
                         {
                             "name": "publisher.max_idle",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "1000",
                             "possible": "",
                             "description": "data publisher pool max connections ideal values"
@@ -1172,7 +1198,7 @@
                         {
                             "name": "publisher.init_idle_size",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "200",
                             "possible": "",
                             "description": "data publisher pool min connections ideal values"
@@ -1180,7 +1206,7 @@
                         {
                             "name": "publisher.pool_size",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "200",
                             "possible": "",
                             "description": "publisher thread pool size"
@@ -1188,7 +1214,7 @@
                         {
                             "name": "publisher.max_pool_size",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "1000",
                             "possible": "",
                             "description": "publisher threax pool max size"
@@ -1196,7 +1222,7 @@
                         {
                             "name": "publisher.keep_alive_time",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "200s",
                             "possible": "",
                             "description": "publisher thread pool, keep alive time"
@@ -1212,7 +1238,7 @@
                         {
                             "name": "blacklist_condition.start_delay",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "not define",
                             "possible": "",
                             "description": "Define delay time to get blocking data from KM"
@@ -1220,7 +1246,7 @@
                         {
                             "name": "jms.destination",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "throttleData",
                             "possible": "",
                             "description": "JMS topic name"
@@ -1228,7 +1254,7 @@
                         {
                             "name": "jms.start_delay",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "not define",
                             "possible": "",
                             "description": "Connection delay to read TM at startup"
@@ -1236,7 +1262,7 @@
                         {
                             "name": "jms.conn_jndi_name",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "TopicConnectionFactory",
                             "possible": "custom value",
                             "description": ""
@@ -1244,7 +1270,7 @@
                         {
                             "name": "jms.destination_type",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "topic",
                             "possible": "",
                             "description": ""
@@ -1252,7 +1278,7 @@
                         {
                             "name": "decision_connection_type",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "andes",
                             "possible": "",
                             "description": "Define JMS type ex: andes"
@@ -1260,7 +1286,7 @@
                         {
                             "name": "jms.java_naming_factory_initial",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "",
                             "possible": "",
                             "description": "Define JMS factory initials. If decision_connection_type is andes, this is \"org.wso2.andes.jndi.PropertiesFileInitialContextFactory\""
@@ -1276,7 +1302,7 @@
                         {
                             "name": "enable_unlimited_tier",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "TRUE",
                             "possible": "",
                             "description": "Enable unlimited tier"
@@ -1284,7 +1310,7 @@
                         {
                             "name": "enable_header_based_throttling",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "FALSE",
                             "possible": "",
                             "description": "Enable header condition based thortlling. Ref docs."
@@ -1292,7 +1318,7 @@
                         {
                             "name": "enable_jwt_claim_based_throttling",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "FALSE",
                             "possible": "",
                             "description": "enable JWT claim based throtlling"
@@ -1329,7 +1355,7 @@
                         {
                             "name": "type",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "failover",
                             "possible": "failover,loadbalance",
                             "description": ""
@@ -1350,7 +1376,7 @@
                         {
                             "name": "enable ",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "FALSE",
                             "possible": "",
                             "description": "enable API State Change workflow"
@@ -1358,7 +1384,7 @@
                         {
                             "name": "service_url",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "https://localhost:9445/bpmn",
                             "possible": "",
                             "description": "WF engine service URL"
@@ -1366,7 +1392,7 @@
                         {
                             "name": "wf_engine_user",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "super username",
                             "possible": "",
                             "description": "WF username"
@@ -1374,7 +1400,7 @@
                         {
                             "name": "wf_engine_pass",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "super user password",
                             "possible": "",
                             "description": "WF password"
@@ -1382,7 +1408,7 @@
                         {
                             "name": "callback_endpoint",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "https://localhost:${mgt.transport.https.port}/api/am/publisher/v0.14/workflows/update-workflow-status",
                             "possible": "",
                             "description": "Callback URL  for the WF engine"
@@ -1390,7 +1416,7 @@
                         {
                             "name": "token_endpoint",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "https://localhost:${https.nio.port}/token",
                             "possible": "",
                             "description": "token endpoint used for the WF."
@@ -1398,7 +1424,7 @@
                         {
                             "name": "client_registration_endpoint",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "https://localhost:${mgt.transport.https.port}/client-registration/v0.14/register",
                             "possible": "",
                             "description": "DCR endpoint"
@@ -1406,7 +1432,7 @@
                         {
                             "name": "client_registration_username",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "super username",
                             "possible": "",
                             "description": "DCR username"
@@ -1427,7 +1453,7 @@
                         {
                             "name": "group_id",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "org.wso2",
                             "possible": "",
                             "description": "group ID of the of the generating project"
@@ -1435,7 +1461,7 @@
                         {
                             "name": "artifact_id",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "org.wso2.client.",
                             "possible": "",
                             "description": "artifact ID of the of the generating project"
@@ -1443,7 +1469,7 @@
                         {
                             "name": "model_package",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "org.wso2.client.model.",
                             "possible": "",
                             "description": "model package of the generating project"
@@ -1451,7 +1477,7 @@
                         {
                             "name": "api_package",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "org.wso2.client.api.",
                             "possible": "",
                             "description": "API package of the generating project"
@@ -1459,7 +1485,7 @@
                         {
                             "name": "supported_languages",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "android,java,scala,csharp,dart,flash,groovy,javascript,jmeter,nodejs,perl,php,python,ruby,swift,clojure,asyncScala,csharpDotNet2",
                             "possible": "",
                             "description": "Supported language"
@@ -1480,7 +1506,7 @@
                         {
                             "name": "remote_tracer.enable",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "FALSE",
                             "possible": "",
                             "description": "Enable tracing on APIM. Traces the execution time upto message level"
@@ -1488,7 +1514,7 @@
                         {
                             "name": "remote_tracer.name",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "zipkin",
                             "possible": "",
                             "description": "tracer name"
@@ -1496,7 +1522,7 @@
                         {
                             "name": "remote_tracer.properties.hostname",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "localhost",
                             "possible": "",
                             "description": "Hostname of the zipkin tool (tracer)"
@@ -1504,7 +1530,7 @@
                         {
                             "name": "remote_tracer.properties.port",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "9411",
                             "possible": "",
                             "description": "Port of the tool"
@@ -1512,7 +1538,7 @@
                         {
                             "name": "log_tracer.enable",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "FALSE",
                             "possible": "",
                             "description": "Whether to log the tracer values or not."
@@ -1533,7 +1559,7 @@
                         {
                             "name": "notifier_impl",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "org.wso2.carbon.apimgt.keymgt.events.TokenRevocationNotifierImpl",
                             "possible": "",
                             "description": "If only custom.If a token is revoked, the notification will be sent to the JMS topic. If we need to change this we need to write a custom implementation."
@@ -1541,7 +1567,7 @@
                         {
                             "name": "enable_realtime_notifier",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "TRUE",
                             "possible": "",
                             "description": "(Only applicable if the MGW is used)If FALSE, works as persistent."
@@ -1549,7 +1575,7 @@
                         {
                             "name": "enable_persistent_notifier",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "TRUE",
                             "possible": "",
                             "description": "Notifications will be persisted to etcd. At MGW server startup, the etcd will be queried by the MGW."
@@ -1557,7 +1583,7 @@
                         {
                             "name": "realtime_notifier.ttl",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "5000",
                             "possible": "",
                             "description": "[TBD]"
@@ -1565,7 +1591,7 @@
                         {
                             "name": "persistent_notifier.hostname",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "https://localhost:2379/v2/keys/jti/",
                             "possible": "",
                             "description": "etcd hostname"
@@ -1573,7 +1599,7 @@
                         {
                             "name": "persistent_notifier.ttl",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "5000",
                             "possible": "",
                             "description": "Ask Sampath for desc and unit"
@@ -1581,7 +1607,7 @@
                         {
                             "name": "persistent_notifier.username",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "root",
                             "possible": "",
                             "description": ""
@@ -1589,7 +1615,7 @@
                         {
                             "name": "persistent_notifier.password",
                             "type": "string",
-                            "required": "FALSE",
+                            "required": false,
                             "default": "root",
                             "possible": "",
                             "description": ""
