@@ -198,7 +198,7 @@ enable_swa=false</code></pre>
 </div>
 
 
-## Super admin configurations
+## Database configurations
 
 <div class="mb-config-catalog">
     <section>
@@ -207,100 +207,6 @@ enable_swa=false</code></pre>
             
             <input name="4" type="checkbox" id="_tab_4">
                 <label class="tab-selector" for="_tab_4"><i class="icon fa fa-code"></i></label>
-                <div class="superfences-content">
-                    <div class="mb-config-example">
-<pre><code class="toml">[super_admin]
-username = "admin"
-password = "admin"
-create_admin_account = true</code></pre>
-                    </div>
-                </div>
-                <div class="doc-wrapper">
-                    <div class="mb-config">
-                        <div class="config-wrap">
-                            <code>[super_admin]</code>
-                            <span class="badge-required">Required</span>
-                            <p>
-                                This includes the configurations related to the super admin user.
-                            </p>
-                        </div>
-                        <div class="params-wrap">
-                            <div class="param">
-                                <div class="param-name">
-                                  <span class="param-name-wrap"> <code>username</code> </span>
-                                </div>
-                                <div class="param-info">
-                                    <div>
-                                        <p>
-                                            <span class="param-type string"> string </span>
-                                            
-                                        </p>
-                                        <div class="param-default">
-                                            <span class="param-default-value">Default: <code>admin</code></span>
-                                        </div>
-                                        
-                                    </div>
-                                    <div class="param-description">
-                                        <p>super admin username</p>
-                                    </div>
-                                </div>
-                            </div><div class="param">
-                                <div class="param-name">
-                                  <span class="param-name-wrap"> <code>password</code> </span>
-                                </div>
-                                <div class="param-info">
-                                    <div>
-                                        <p>
-                                            <span class="param-type string"> string </span>
-                                            
-                                        </p>
-                                        <div class="param-default">
-                                            <span class="param-default-value">Default: <code>admin</code></span>
-                                        </div>
-                                        
-                                    </div>
-                                    <div class="param-description">
-                                        <p>super admin password</p>
-                                    </div>
-                                </div>
-                            </div><div class="param">
-                                <div class="param-name">
-                                  <span class="param-name-wrap"> <code>create_admin_account</code> </span>
-                                </div>
-                                <div class="param-info">
-                                    <div>
-                                        <p>
-                                            <span class="param-type string"> string </span>
-                                            
-                                        </p>
-                                        <div class="param-default">
-                                            <span class="param-default-value">Default: <code>TRUE</code></span>
-                                        </div>
-                                        
-                                    </div>
-                                    <div class="param-description">
-                                        <p>Set this to &#39;true&#39;  to create a new user with the super admin credentials given.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-</div>
-
-
-## Database configs
-
-<div class="mb-config-catalog">
-    <section>
-        <div class="mb-config-options">
-            <div class="superfences-tabs">
-            
-            <input name="5" type="checkbox" id="_tab_5">
-                <label class="tab-selector" for="_tab_5"><i class="icon fa fa-code"></i></label>
                 <div class="superfences-content">
                     <div class="mb-config-example">
 <pre><code class="toml">[database.apim_db]
@@ -338,7 +244,7 @@ password = "wso2carbon"</code></pre>
                                         </div>
                                     </div>
                                     <div class="param-description">
-                                        <p>DB vendor</p>
+                                        <p>Database vendor</p>
                                     </div>
                                 </div>
                             </div><div class="param">
@@ -452,7 +358,7 @@ password = "wso2carbon"</code></pre>
                                         
                                     </div>
                                     <div class="param-description">
-                                        <p>  The value changes according to the DB query</p>
+                                        <p> The value changes according to the Database query</p>
                                     </div>
                                 </div>
                             </div><div class="param">
@@ -567,8 +473,8 @@ password = "wso2carbon"</code></pre>
         <div class="mb-config-options">
             <div class="superfences-tabs">
             
-            <input name="6" type="checkbox" id="_tab_6">
-                <label class="tab-selector" for="_tab_6"><i class="icon fa fa-code"></i></label>
+            <input name="5" type="checkbox" id="_tab_5">
+                <label class="tab-selector" for="_tab_5"><i class="icon fa fa-code"></i></label>
                 <div class="superfences-content">
                     <div class="mb-config-example">
 <pre><code class="toml">[super_admin]
@@ -682,8 +588,8 @@ create_admin_account = true</code></pre>
         <div class="mb-config-options">
             <div class="superfences-tabs">
             
-            <input name="7" type="checkbox" id="_tab_7">
-                <label class="tab-selector" for="_tab_7"><i class="icon fa fa-code"></i></label>
+            <input name="6" type="checkbox" id="_tab_6">
+                <label class="tab-selector" for="_tab_6"><i class="icon fa fa-code"></i></label>
                 <div class="superfences-content">
                     <div class="mb-config-example">
 <pre><code class="toml">[super_admin]
@@ -840,7 +746,9 @@ create_admin_account = true</code></pre>
                                         
                                     </div>
                                     <div class="param-description">
-                                        <p>Can define custom claim retiriver implmentation and need to apim.jwt.enable_user_claims=true. It should be the fully-qualified class name.</p>
+                                        <p>You can define the custom claim retiriver implmentation by adding the following 
+ &lt;code&gt;apim.jwt.enable_user_claims=true&lt;/code&gt;. 
+ Make sure that it is the fully-qualified class name.</p>
                                     </div>
                                 </div>
                             </div><div class="param">
@@ -900,8 +808,8 @@ create_admin_account = true</code></pre>
         <div class="mb-config-options">
             <div class="superfences-tabs">
             
-            <input name="8" type="checkbox" id="_tab_8">
-                <label class="tab-selector" for="_tab_8"><i class="icon fa fa-code"></i></label>
+            <input name="7" type="checkbox" id="_tab_7">
+                <label class="tab-selector" for="_tab_7"><i class="icon fa fa-code"></i></label>
                 <div class="superfences-content">
                     <div class="mb-config-example">
 <pre><code class="toml">[super_admin]
@@ -995,7 +903,7 @@ create_admin_account = true</code></pre>
                                         
                                     </div>
                                     <div class="param-description">
-                                        <p>Describe the function of the GW.</p>
+                                        <p>Describe the function of the gateway.</p>
                                     </div>
                                 </div>
                             </div><div class="param">
@@ -1148,8 +1056,8 @@ create_admin_account = true</code></pre>
         <div class="mb-config-options">
             <div class="superfences-tabs">
             
-            <input name="9" type="checkbox" id="_tab_9">
-                <label class="tab-selector" for="_tab_9"><i class="icon fa fa-code"></i></label>
+            <input name="8" type="checkbox" id="_tab_8">
+                <label class="tab-selector" for="_tab_8"><i class="icon fa fa-code"></i></label>
                 <div class="superfences-content">
                     <div class="mb-config-example">
 <pre><code class="toml">[super_admin]
@@ -1203,7 +1111,7 @@ create_admin_account = true</code></pre>
                                         
                                     </div>
                                     <div class="param-description">
-                                        <p>set cache expirary time. m for minutes. Recommended value for 15 minutes.</p>
+                                        <p>set cache expiry time. m for minutes. Recommended value for 15 minutes.</p>
                                     </div>
                                 </div>
                             </div>
@@ -1223,8 +1131,8 @@ create_admin_account = true</code></pre>
         <div class="mb-config-options">
             <div class="superfences-tabs">
             
-            <input name="10" type="checkbox" id="_tab_10">
-                <label class="tab-selector" for="_tab_10"><i class="icon fa fa-code"></i></label>
+            <input name="9" type="checkbox" id="_tab_9">
+                <label class="tab-selector" for="_tab_9"><i class="icon fa fa-code"></i></label>
                 <div class="superfences-content">
                     <div class="mb-config-example">
 <pre><code class="toml">[super_admin]
@@ -1279,8 +1187,8 @@ create_admin_account = true</code></pre>
         <div class="mb-config-options">
             <div class="superfences-tabs">
             
-            <input name="11" type="checkbox" id="_tab_11">
-                <label class="tab-selector" for="_tab_11"><i class="icon fa fa-code"></i></label>
+            <input name="10" type="checkbox" id="_tab_10">
+                <label class="tab-selector" for="_tab_10"><i class="icon fa fa-code"></i></label>
                 <div class="superfences-content">
                     <div class="mb-config-example">
 <pre><code class="toml">[super_admin]
@@ -1354,8 +1262,8 @@ create_admin_account = true</code></pre>
         <div class="mb-config-options">
             <div class="superfences-tabs">
             
-            <input name="12" type="checkbox" id="_tab_12">
-                <label class="tab-selector" for="_tab_12"><i class="icon fa fa-code"></i></label>
+            <input name="11" type="checkbox" id="_tab_11">
+                <label class="tab-selector" for="_tab_11"><i class="icon fa fa-code"></i></label>
                 <div class="superfences-content">
                     <div class="mb-config-example">
 <pre><code class="toml">[super_admin]
@@ -1410,8 +1318,8 @@ create_admin_account = true</code></pre>
         <div class="mb-config-options">
             <div class="superfences-tabs">
             
-            <input name="13" type="checkbox" id="_tab_13">
-                <label class="tab-selector" for="_tab_13"><i class="icon fa fa-code"></i></label>
+            <input name="12" type="checkbox" id="_tab_12">
+                <label class="tab-selector" for="_tab_12"><i class="icon fa fa-code"></i></label>
                 <div class="superfences-content">
                     <div class="mb-config-example">
 <pre><code class="toml">[super_admin]
@@ -1447,6 +1355,62 @@ create_admin_account = true</code></pre>
                                     </div>
                                     <div class="param-description">
                                         <p>Enabel cache for scopes. Expires in 15 mins by default.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+## Cache publisher roles
+
+<div class="mb-config-catalog">
+    <section>
+        <div class="mb-config-options">
+            <div class="superfences-tabs">
+            
+            <input name="13" type="checkbox" id="_tab_13">
+                <label class="tab-selector" for="_tab_13"><i class="icon fa fa-code"></i></label>
+                <div class="superfences-content">
+                    <div class="mb-config-example">
+<pre><code class="toml">[super_admin]
+username = "admin"
+password = "admin"
+create_admin_account = true</code></pre>
+                    </div>
+                </div>
+                <div class="doc-wrapper">
+                    <div class="mb-config">
+                        <div class="config-wrap">
+                            <code>[apim.cache.publisher_roles]</code>
+                            <span class="badge-required">Required</span>
+                            <p>
+                                
+                            </p>
+                        </div>
+                        <div class="params-wrap">
+                            <div class="param">
+                                <div class="param-name">
+                                  <span class="param-name-wrap"> <code>enable</code> </span>
+                                </div>
+                                <div class="param-info">
+                                    <div>
+                                        <p>
+                                            <span class="param-type string"> string </span>
+                                            
+                                        </p>
+                                        <div class="param-default">
+                                            <span class="param-default-value">Default: <code>TRUE</code></span>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="param-description">
+                                        <p>Enable cache for publisher roles. Expires in 15 mins by default</p>
                                     </div>
                                 </div>
                             </div>
@@ -1515,7 +1479,7 @@ create_admin_account = true</code></pre>
 </div>
 
 
-## Cache publisher roles
+## Cache JWT claims
 
 <div class="mb-config-catalog">
     <section>
@@ -1524,62 +1488,6 @@ create_admin_account = true</code></pre>
             
             <input name="15" type="checkbox" id="_tab_15">
                 <label class="tab-selector" for="_tab_15"><i class="icon fa fa-code"></i></label>
-                <div class="superfences-content">
-                    <div class="mb-config-example">
-<pre><code class="toml">[super_admin]
-username = "admin"
-password = "admin"
-create_admin_account = true</code></pre>
-                    </div>
-                </div>
-                <div class="doc-wrapper">
-                    <div class="mb-config">
-                        <div class="config-wrap">
-                            <code>[apim.cache.publisher_roles]</code>
-                            <span class="badge-required">Required</span>
-                            <p>
-                                
-                            </p>
-                        </div>
-                        <div class="params-wrap">
-                            <div class="param">
-                                <div class="param-name">
-                                  <span class="param-name-wrap"> <code>enable</code> </span>
-                                </div>
-                                <div class="param-info">
-                                    <div>
-                                        <p>
-                                            <span class="param-type string"> string </span>
-                                            
-                                        </p>
-                                        <div class="param-default">
-                                            <span class="param-default-value">Default: <code>TRUE</code></span>
-                                        </div>
-                                        
-                                    </div>
-                                    <div class="param-description">
-                                        <p>Enable cache for publisher roles. Expires in 15 mins by default</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-</div>
-
-
-## Cache JWT claims
-
-<div class="mb-config-catalog">
-    <section>
-        <div class="mb-config-options">
-            <div class="superfences-tabs">
-            
-            <input name="16" type="checkbox" id="_tab_16">
-                <label class="tab-selector" for="_tab_16"><i class="icon fa fa-code"></i></label>
                 <div class="superfences-content">
                     <div class="mb-config-example">
 <pre><code class="toml">[super_admin]
@@ -1633,7 +1541,7 @@ create_admin_account = true</code></pre>
                                         
                                     </div>
                                     <div class="param-description">
-                                        <p>Set the cache expirary time. Would be same as the JWT expiry time.</p>
+                                        <p>Set the cache expiry time. Would be same as the JWT expiry time.</p>
                                     </div>
                                 </div>
                             </div>
@@ -1653,8 +1561,8 @@ create_admin_account = true</code></pre>
         <div class="mb-config-options">
             <div class="superfences-tabs">
             
-            <input name="17" type="checkbox" id="_tab_17">
-                <label class="tab-selector" for="_tab_17"><i class="icon fa fa-code"></i></label>
+            <input name="16" type="checkbox" id="_tab_16">
+                <label class="tab-selector" for="_tab_16"><i class="icon fa fa-code"></i></label>
                 <div class="superfences-content">
                     <div class="mb-config-example">
 <pre><code class="toml">[super_admin]
@@ -1689,7 +1597,7 @@ create_admin_account = true</code></pre>
                                         
                                     </div>
                                     <div class="param-description">
-                                        <p>Set tag cache expirary time. Check with the new UI. Disabled when not defined.</p>
+                                        <p>Set tag cache expiry time. Check with the new UI. Disabled when not defined.</p>
                                     </div>
                                 </div>
                             </div>
@@ -1709,8 +1617,8 @@ create_admin_account = true</code></pre>
         <div class="mb-config-options">
             <div class="superfences-tabs">
             
-            <input name="18" type="checkbox" id="_tab_18">
-                <label class="tab-selector" for="_tab_18"><i class="icon fa fa-code"></i></label>
+            <input name="17" type="checkbox" id="_tab_17">
+                <label class="tab-selector" for="_tab_17"><i class="icon fa fa-code"></i></label>
                 <div class="superfences-content">
                     <div class="mb-config-example">
 <pre><code class="toml">[super_admin]
@@ -1936,8 +1844,8 @@ create_admin_account = true</code></pre>
         <div class="mb-config-options">
             <div class="superfences-tabs">
             
-            <input name="19" type="checkbox" id="_tab_19">
-                <label class="tab-selector" for="_tab_19"><i class="icon fa fa-code"></i></label>
+            <input name="18" type="checkbox" id="_tab_18">
+                <label class="tab-selector" for="_tab_18"><i class="icon fa fa-code"></i></label>
                 <div class="superfences-content">
                     <div class="mb-config-example">
 <pre><code class="toml">[super_admin]
@@ -2049,8 +1957,8 @@ create_admin_account = true</code></pre>
         <div class="mb-config-options">
             <div class="superfences-tabs">
             
-            <input name="20" type="checkbox" id="_tab_20">
-                <label class="tab-selector" for="_tab_20"><i class="icon fa fa-code"></i></label>
+            <input name="19" type="checkbox" id="_tab_19">
+                <label class="tab-selector" for="_tab_19"><i class="icon fa fa-code"></i></label>
                 <div class="superfences-content">
                     <div class="mb-config-example">
 <pre><code class="toml">[super_admin]
@@ -2221,8 +2129,8 @@ create_admin_account = true</code></pre>
         <div class="mb-config-options">
             <div class="superfences-tabs">
             
-            <input name="21" type="checkbox" id="_tab_21">
-                <label class="tab-selector" for="_tab_21"><i class="icon fa fa-code"></i></label>
+            <input name="20" type="checkbox" id="_tab_20">
+                <label class="tab-selector" for="_tab_20"><i class="icon fa fa-code"></i></label>
                 <div class="superfences-content">
                     <div class="mb-config-example">
 <pre><code class="toml">[super_admin]
@@ -2374,8 +2282,8 @@ create_admin_account = true</code></pre>
         <div class="mb-config-options">
             <div class="superfences-tabs">
             
-            <input name="22" type="checkbox" id="_tab_22">
-                <label class="tab-selector" for="_tab_22"><i class="icon fa fa-code"></i></label>
+            <input name="21" type="checkbox" id="_tab_21">
+                <label class="tab-selector" for="_tab_21"><i class="icon fa fa-code"></i></label>
                 <div class="superfences-content">
                     <div class="mb-config-example">
 <pre><code class="toml">[super_admin]
@@ -2622,8 +2530,8 @@ create_admin_account = true</code></pre>
         <div class="mb-config-options">
             <div class="superfences-tabs">
             
-            <input name="23" type="checkbox" id="_tab_23">
-                <label class="tab-selector" for="_tab_23"><i class="icon fa fa-code"></i></label>
+            <input name="22" type="checkbox" id="_tab_22">
+                <label class="tab-selector" for="_tab_22"><i class="icon fa fa-code"></i></label>
                 <div class="superfences-content">
                     <div class="mb-config-example">
 <pre><code class="toml">[super_admin]
@@ -2678,8 +2586,8 @@ create_admin_account = true</code></pre>
         <div class="mb-config-options">
             <div class="superfences-tabs">
             
-            <input name="24" type="checkbox" id="_tab_24">
-                <label class="tab-selector" for="_tab_24"><i class="icon fa fa-code"></i></label>
+            <input name="23" type="checkbox" id="_tab_23">
+                <label class="tab-selector" for="_tab_23"><i class="icon fa fa-code"></i></label>
                 <div class="superfences-content">
                     <div class="mb-config-example">
 <pre><code class="toml">[super_admin]
@@ -2810,8 +2718,8 @@ create_admin_account = true</code></pre>
         <div class="mb-config-options">
             <div class="superfences-tabs">
             
-            <input name="25" type="checkbox" id="_tab_25">
-                <label class="tab-selector" for="_tab_25"><i class="icon fa fa-code"></i></label>
+            <input name="24" type="checkbox" id="_tab_24">
+                <label class="tab-selector" for="_tab_24"><i class="icon fa fa-code"></i></label>
                 <div class="superfences-content">
                     <div class="mb-config-example">
 <pre><code class="toml">[super_admin]
@@ -2906,8 +2814,8 @@ create_admin_account = true</code></pre>
         <div class="mb-config-options">
             <div class="superfences-tabs">
             
-            <input name="26" type="checkbox" id="_tab_26">
-                <label class="tab-selector" for="_tab_26"><i class="icon fa fa-code"></i></label>
+            <input name="25" type="checkbox" id="_tab_25">
+                <label class="tab-selector" for="_tab_25"><i class="icon fa fa-code"></i></label>
                 <div class="superfences-content">
                     <div class="mb-config-example">
 <pre><code class="toml">[super_admin]
@@ -3420,8 +3328,8 @@ create_admin_account = true</code></pre>
         <div class="mb-config-options">
             <div class="superfences-tabs">
             
-            <input name="27" type="checkbox" id="_tab_27">
-                <label class="tab-selector" for="_tab_27"><i class="icon fa fa-code"></i></label>
+            <input name="26" type="checkbox" id="_tab_26">
+                <label class="tab-selector" for="_tab_26"><i class="icon fa fa-code"></i></label>
                 <div class="superfences-content">
                     <div class="mb-config-example">
 <pre><code class="toml">[super_admin]
@@ -3520,8 +3428,8 @@ create_admin_account = true</code></pre>
         <div class="mb-config-options">
             <div class="superfences-tabs">
             
-            <input name="28" type="checkbox" id="_tab_28">
-                <label class="tab-selector" for="_tab_28"><i class="icon fa fa-code"></i></label>
+            <input name="27" type="checkbox" id="_tab_27">
+                <label class="tab-selector" for="_tab_27"><i class="icon fa fa-code"></i></label>
                 <div class="superfences-content">
                     <div class="mb-config-example">
 <pre><code class="toml">[super_admin]
@@ -3709,8 +3617,8 @@ create_admin_account = true</code></pre>
         <div class="mb-config-options">
             <div class="superfences-tabs">
             
-            <input name="29" type="checkbox" id="_tab_29">
-                <label class="tab-selector" for="_tab_29"><i class="icon fa fa-code"></i></label>
+            <input name="28" type="checkbox" id="_tab_28">
+                <label class="tab-selector" for="_tab_28"><i class="icon fa fa-code"></i></label>
                 <div class="superfences-content">
                     <div class="mb-config-example">
 <pre><code class="toml">[super_admin]
@@ -3841,8 +3749,8 @@ create_admin_account = true</code></pre>
         <div class="mb-config-options">
             <div class="superfences-tabs">
             
-            <input name="30" type="checkbox" id="_tab_30">
-                <label class="tab-selector" for="_tab_30"><i class="icon fa fa-code"></i></label>
+            <input name="29" type="checkbox" id="_tab_29">
+                <label class="tab-selector" for="_tab_29"><i class="icon fa fa-code"></i></label>
                 <div class="superfences-content">
                     <div class="mb-config-example">
 <pre><code class="toml">[super_admin]
@@ -3973,8 +3881,8 @@ create_admin_account = true</code></pre>
         <div class="mb-config-options">
             <div class="superfences-tabs">
             
-            <input name="31" type="checkbox" id="_tab_31">
-                <label class="tab-selector" for="_tab_31"><i class="icon fa fa-code"></i></label>
+            <input name="30" type="checkbox" id="_tab_30">
+                <label class="tab-selector" for="_tab_30"><i class="icon fa fa-code"></i></label>
                 <div class="superfences-content">
                     <div class="mb-config-example">
 <pre><code class="toml">[super_admin]
@@ -4162,8 +4070,8 @@ create_admin_account = true</code></pre>
         <div class="mb-config-options">
             <div class="superfences-tabs">
             
-            <input name="32" type="checkbox" id="_tab_32">
-                <label class="tab-selector" for="_tab_32"><i class="icon fa fa-code"></i></label>
+            <input name="31" type="checkbox" id="_tab_31">
+                <label class="tab-selector" for="_tab_31"><i class="icon fa fa-code"></i></label>
                 <div class="superfences-content">
                     <div class="mb-config-example">
 <pre><code class="toml">[super_admin]

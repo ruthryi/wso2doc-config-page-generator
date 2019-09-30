@@ -27,7 +27,7 @@
                             "type": "string",
                             "required": false,
                             "default": "TRUE",
-                            "description": "If this is true whether to create a new user with the super admin details given."
+                            "description": "Set this to true to create a new user with the super admin details given."
                         }
                     ]
                 }
@@ -63,40 +63,6 @@
             "exampleFile": "_primary-data-store.toml"
         },
         {
-            "title": "Super admin configurations",
-            "options": [
-                {
-                    "name": "super_admin",
-                    "required": true,
-                    "description": "This includes the configurations related to the super admin user.",
-                    "params": [
-                        {
-                            "name": "username",
-                            "type": "string",
-                            "required": false,
-                            "default": "admin",
-                            "description": "super admin username"
-                        },
-                        {
-                            "name": "password",
-                            "type": "string",
-                            "required": false,
-                            "default": "admin",
-                            "description": "super admin password"
-                        },
-                        {
-                            "name": "create_admin_account",
-                            "type": "string",
-                            "required": false,
-                            "default": "TRUE",
-                            "description": "Set this to 'true'  to create a new user with the super admin credentials given."
-                        }
-                    ]
-                }
-            ],
-            "exampleFile": "_super-admin.toml"
-        },
-        {
             "title": "Database configurations",
             "options": [
                 {
@@ -107,7 +73,7 @@
                         {
                             "name": "type",
                             "type": "string",
-                            "required": "TRUE",
+                            "required": true,
                             "default": "h2",
                             "possible": "mysql,h2,mssql,postgre,oracle,db2",
                             "description": "Database vendor"
@@ -115,15 +81,15 @@
                         {
                             "name": "hostname",
                             "type": "string",
-                            "required": "TRUE",
+                            "required": true,
                             "default": "",
                             "possible": "",
-                            "description": "You can use either hostname and port or the URL[required]. If you specify the URL the hostname and port will be overridden."
+                            "description": "You can use either hostname and port or the URL(given below). If you specify the URL the hostname and port will be overridden."
                         },
                         {
                             "name": "port",
                             "type": "string",
-                            "required": "TRUE",
+                            "required": true,
                             "default": "",
                             "description": ""
                         },
@@ -132,28 +98,28 @@
                             "type": "string",
                             "required": false,
                             "default": "jdbc:h2:repository/database/WSO2AM_DB;DB_CLOSE_ON_EXIT=FALSE",
-                            "description": "connection url - required when you use the h2 db. You have to add the URL if you need to use the JDBC properties listed below. Otherwise it is optional. "
+                            "description": "The connection URL is required when you use the h2 db.\n\n You have to add the URL to use the JDBC properties listed below. Otherwise it is optional."
                         },
                         {
                             "name": "username",
                             "type": "string",
-                            "required": "TRUE",
+                            "required": true,
                             "default": "wso2carbon",
                             "description": "The username used to create a connection to the database"
                         },
                         {
                             "name": "password",
                             "type": "string",
-                            "required": "TRUE",
+                            "required": true,
                             "default": "wso2carbon",
                             "description": "The password used to create a connection to the database"
                         },
                         {
                             "name": "*validationQuery",
                             "type": "string",
-                            "required": "TRUE",
+                            "required": true,
                             "default": "SELECT 1",
-                            "description": "  The value changes according to the Database query"
+                            "description": " The value changes according to the Database query"
                         },
                         {
                             "name": "pool_options.maxActive",
@@ -248,7 +214,7 @@
                         {
                             "name": "enable",
                             "type": "string",
-                            "required": "TRUE",
+                            "required": true,
                             "default": "FALSE",
                             "possible": "true, false",
                             "description": "Enable JWT."
@@ -298,7 +264,7 @@
                             "required": false,
                             "default": "",
                             "possible": "",
-                            "description": "Can define custom claim retiriver implmentation and need to apim.jwt.enable_user_claims=true. It should be the fully-qualified class name."
+                            "description": "You can define the custom claim retiriver implmentation by adding the following \n apim.jwt.enable_user_claims=true. \n\n Make sure that it is the fully-qualified class name."
                         },
                         {
                             "name": "claim_dialect",
@@ -332,7 +298,7 @@
                         {
                             "name": "name",
                             "type": "string",
-                            "required": "TRUE",
+                            "required": true,
                             "default": "Production and Sandbox",
                             "possible": "",
                             "description": "User can add any preferred value"
@@ -340,7 +306,7 @@
                         {
                             "name": "type",
                             "type": "string",
-                            "required": "TRUE",
+                            "required": true,
                             "default": "hybrid",
                             "possible": "production, sandbox, hybrid",
                             "description": ""
@@ -348,7 +314,7 @@
                         {
                             "name": "display_in_api_console  ",
                             "type": "string",
-                            "required": "TRUE",
+                            "required": true,
                             "default": "TRUE",
                             "possible": "",
                             "description": "Displays the env under the 'Try it' in the API Store, in the API console."
@@ -356,15 +322,15 @@
                         {
                             "name": "description",
                             "type": "string",
-                            "required": "TRUE",
+                            "required": true,
                             "default": "This is a hybrid gateway that handles both production and sandbox token traffic.",
                             "possible": "",
-                            "description": "Describe the function of the GW."
+                            "description": "Describe the function of the gateway."
                         },
                         {
                             "name": "show_as_token_endpoint_url  ",
                             "type": "string",
-                            "required": "TRUE",
+                            "required": true,
                             "default": "TRUE",
                             "possible": "",
                             "description": "Use to construct the sample curl request in the API Store."
@@ -372,7 +338,7 @@
                         {
                             "name": "service_url",
                             "type": "string",
-                            "required": "TRUE",
+                            "required": true,
                             "default": "https://localhost:9443/services/",
                             "possible": "",
                             "description": "APIs will be published using this URL"
@@ -380,7 +346,7 @@
                         {
                             "name": "username",
                             "type": "string",
-                            "required": "TRUE",
+                            "required": true,
                             "default": "$conf{super_admin.username}",
                             "possible": "",
                             "description": "Credentials used to publish APIs"
@@ -388,7 +354,7 @@
                         {
                             "name": "password",
                             "type": "string",
-                            "required": "TRUE",
+                            "required": true,
                             "default": "$conf{super_admin.password}",
                             "possible": "",
                             "description": "Credentials used to publish APIs"
@@ -396,7 +362,7 @@
                         {
                             "name": "ws_endpoint",
                             "type": "string",
-                            "required": "TRUE",
+                            "required": true,
                             "default": "no default value",
                             "possible": "",
                             "description": "ex: ws://localhost:9099, [Same as HTTP]"
@@ -404,7 +370,7 @@
                         {
                             "name": "https_endpoint",
                             "type": "string",
-                            "required": "TRUE",
+                            "required": true,
                             "default": "no default value",
                             "possible": "",
                             "description": "https://localhost:8243/"
@@ -444,7 +410,7 @@
                             "required": false,
                             "default": "15 m",
                             "possible": "",
-                            "description": "set cache expirary time. m for minutes. Recommended value for 15 minutes."
+                            "description": "set cache expiry time. m for minutes. Recommended value for 15 minutes."
                         }
                     ]
                 }
@@ -607,7 +573,7 @@
                             "required": false,
                             "default": "Not defined",
                             "possible": "",
-                            "description": "Set the cache expirary time. Would be same as the JWT expiry time."
+                            "description": "Set the cache expiry time. Would be same as the JWT expiry time."
                         }
                     ]
                 }
@@ -628,7 +594,7 @@
                             "required": false,
                             "default": "2m",
                             "possible": "",
-                            "description": "Set tag cache expirary time. Check with the new UI. Disabled when not defined."
+                            "description": "Set tag cache expiry time. Check with the new UI. Disabled when not defined."
                         }
                     ]
                 }
@@ -646,7 +612,7 @@
                         {
                             "name": "enable",
                             "type": "string",
-                            "required": "TRUE",
+                            "required": true,
                             "default": "FALSE",
                             "possible": "",
                             "description": "enable/disable analytics on the API Manager"
@@ -654,7 +620,7 @@
                         {
                             "name": "store_api_url",
                             "type": "string",
-                            "required": "TRUE",
+                            "required": true,
                             "default": "https://localhost:7444",
                             "possible": "",
                             "description": "Analytics store rest api url. If there are mutiple analytics node, use LB url"
@@ -662,7 +628,7 @@
                         {
                             "name": "username",
                             "type": "string",
-                            "required": "TRUE",
+                            "required": true,
                             "default": "user super admin username",
                             "possible": "",
                             "description": "username of the analytics node"
@@ -670,7 +636,7 @@
                         {
                             "name": "password",
                             "type": "string",
-                            "required": "TRUE",
+                            "required": true,
                             "default": "user super admin password",
                             "possible": "",
                             "description": "password of the analytics node"
@@ -747,7 +713,7 @@
                         {
                             "name": "analytics_url",
                             "type": "string",
-                            "required": "TRUE",
+                            "required": true,
                             "default": "tcp://localhost:7612",
                             "possible": "",
                             "description": "list of server urls ex: analytics_url = [\"tcp: //localhost:7611, tcp://localhost:7611\"]\""
@@ -755,7 +721,7 @@
                         {
                             "name": "analytics_auth_url",
                             "type": "string",
-                            "required": "TRUE",
+                            "required": true,
                             "default": "ssl://localhost:7712",
                             "possible": "",
                             "description": "list of auth server urls ex: analytics_auth_url = [\"ssl: //localhost:7711,ssl://localhost:7711\"]"
@@ -784,7 +750,7 @@
                         {
                             "name": "service_url",
                             "type": "string",
-                            "required": "TRUE",
+                            "required": true,
                             "default": "https://localhost:9443/services/",
                             "possible": "",
                             "description": "URL that offers services of the KM"
@@ -914,7 +880,7 @@
                         {
                             "name": "url",
                             "type": "string",
-                            "required": "TRUE",
+                            "required": true,
                             "default": "https://localhost:9443/store",
                             "possible": "",
                             "description": "Public store URL"
@@ -1230,7 +1196,7 @@
                         {
                             "name": "service_url",
                             "type": "string",
-                            "required": "TRUE",
+                            "required": true,
                             "default": "https://localhost:${mgt.transport.https.port}${carbon.context}services/",
                             "possible": "",
                             "description": "TM service URL "
@@ -1294,7 +1260,7 @@
                         {
                             "name": "throttle_decision_endpoints",
                             "type": "string",
-                            "required": "TRUE",
+                            "required": true,
                             "default": "",
                             "possible": "",
                             "description": "Define array of JMS connection as a array."
@@ -1339,7 +1305,7 @@
                         {
                             "name": "traffic_manager_urls",
                             "type": "string",
-                            "required": "TRUE",
+                            "required": true,
                             "default": "",
                             "possible": "TM binary server url",
                             "description": "[[apim.throttling.url_group]]traffic_manager_urls = [\"tcp://localhost:9611\",\"tcp://localhost:9611\"]traffic_manager_auth_urls = [\"ssl://localhost:9711\",\"ssl://localhost:9711\"]type = \"loadbalance\""
@@ -1347,7 +1313,7 @@
                         {
                             "name": "traffic_manager_auth_urls",
                             "type": "string",
-                            "required": "TRUE",
+                            "required": true,
                             "default": "",
                             "possible": "TM binary auth server url",
                             "description": ""
