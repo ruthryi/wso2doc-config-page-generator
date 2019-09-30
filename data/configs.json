@@ -1,5 +1,5 @@
 {
-    "configs" : [
+    "configs": [
         {
             "title": "Super admin configurations",
             "options": [
@@ -59,7 +59,7 @@
                         }
                     ]
                 }
-            ],   
+            ],
             "exampleFile": "_primary-data-store.toml"
         },
         {
@@ -105,14 +105,14 @@
                             "type": "string",
                             "required": true,
                             "default": "wso2carbon",
-                            "description": "The username used to create a connection to the database"
+                            "description": "The username used to create a connection to the database."
                         },
                         {
                             "name": "password",
                             "type": "string",
                             "required": true,
                             "default": "wso2carbon",
-                            "description": "The password used to create a connection to the database"
+                            "description": "The password used to create a connection to the database."
                         },
                         {
                             "name": "*validationQuery",
@@ -126,35 +126,35 @@
                             "type": "string",
                             "required": false,
                             "default": "50",
-                            "description": "Tuning parameters. Change according to the preferred database."
+                            "description": "The maximum number of active connections that can be allocated from the connection pool at the same time. Change according to the preferred database."
                         },
                         {
                             "name": "pool_options.maxWait",
                             "type": "string",
                             "required": false,
                             "default": "60000",
-                            "description": ""
+                            "description": "The maximum time that requests are expected to wait in the queue for a connection to be released. This property comes into effect when the maximum number of active connections allowed in the connection pool (see maxActive property) is used up."
                         },
                         {
                             "name": "pool_options.testOnBorrow",
                             "type": "string",
                             "required": false,
                             "default": "TRUE",
-                            "description": ""
+                            "description": "The indication of whether connection objects will be validated before they are borrowed from the pool. If the object validation fails, the connection is dropped from the pool, and there will be an attempt to borrow another connection."
                         },
                         {
                             "name": "pool_options.validationInterval",
                             "type": "string",
                             "required": false,
                             "default": "30000",
-                            "description": ""
+                            "description": "This parameter controls how frequently a given validation query is executed (time in milliseconds). That is, if a connection is due for validation, but has been validated previously within this interval, it will not be validated again."
                         },
                         {
                             "name": "pool_options.defaultAutoCommit",
                             "type": "string",
                             "required": false,
                             "default": "TRUE",
-                            "description": ""
+                            "description": "When auto committing is enabled, each SQL statement will be committed to the database as an individual transaction, as opposed to committing multiple statements as a single transaction."
                         }
                     ]
                 }
@@ -209,7 +209,7 @@
                 {
                     "name": "apim.jwt",
                     "required": true,
-                    "description": "Enable APIM to generate a JWT within itself.",
+                    "description": "Enable APIM to generate a JWT within itself. \n\n JSON Web Token (JWT) is used to represent claims that are transferred between two parties such as the end-user and the backend.",
                     "params": [
                         {
                             "name": "enable",
@@ -225,7 +225,7 @@
                             "required": false,
                             "default": "base64",
                             "possible": "base64,base64url",
-                            "description": "Use default JWT generator. Use url-safe JWT generator if it is base64url."
+                            "description": "Use base64 encoding for the default JWT generator. \n\nUse the url-safe JWT generator if it is base64url."
                         },
                         {
                             "name": "generator_impl",
@@ -233,7 +233,7 @@
                             "required": false,
                             "default": "",
                             "possible": "",
-                            "description": "can be define custom generation implmetation. If this is defnied apim.jwt.encoding will be ignored. It should be the fully-qualified class name. e.g., <take it from doc>"
+                            "description": "This can be defined as a custom generation implmetation. \n\nIf this is defined, the \"apim.jwt.encoding\" will be ignored. \n\nNote that this should be the fully-qualified class name."
                         },
                         {
                             "name": "header",
@@ -272,7 +272,7 @@
                             "required": false,
                             "default": "http://wso2.org/claims",
                             "possible": "",
-                            "description": "Defined claim set under user management. Refer IS doc."
+                            "description": "A set of claims are identified as a dialect. Different dialects represent the same piece of information with different claim URIs."
                         },
                         {
                             "name": "signing_algorithm",
