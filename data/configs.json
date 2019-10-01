@@ -159,7 +159,7 @@
                     ]
                 }
             ],
-            "exampleFile": "_primary-data.toml"
+            "exampleFile": "_database_apim_db.toml"
         },
         {
             "title": "Shared database configurations",
@@ -201,7 +201,7 @@
                     ]
                 }
             ],
-            "exampleFile": "_super-admin.toml"
+            "exampleFile": "_database_shared_db.toml"
         },
         {
             "title": "JWT Configurations",
@@ -285,7 +285,7 @@
                     ]
                 }
             ],
-            "exampleFile": "_super-admin.toml"
+            "exampleFile": "_apim_jwt.toml"
         },
         {
             "title": "API-M gateway environment configurations",
