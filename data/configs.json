@@ -386,7 +386,7 @@
                     ]
                 }
             ],
-            "exampleFile": "_super-admin.toml"
+            "exampleFile": "apim.gateway.environment.toml"
         },
         {
             "title": "Gateway token cache",
@@ -415,7 +415,7 @@
                     ]
                 }
             ],
-            "exampleFile": "_super-admin.toml"
+            "exampleFile": "apim.cache.gateway_token.toml"
         },
         {
             "title": "Cache resource",
@@ -436,7 +436,7 @@
                     ]
                 }
             ],
-            "exampleFile": "_super-admin.toml"
+            "exampleFile": "apim.cache.resource.toml"
         },
         {
             "title": "Cache Keymanager token",

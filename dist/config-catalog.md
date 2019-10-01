@@ -829,10 +829,18 @@ Note that this should be the fully-qualified class name.</p>
                 <label class="tab-selector" for="_tab_7"><i class="icon fa fa-code"></i></label>
                 <div class="superfences-content">
                     <div class="mb-config-example">
-<pre><code class="toml">[super_admin]
+<pre><code class="toml">[[apim.gateway.environment]]
+name = "Production and Sandbox"
+type = "hybrid"
+display_in_api_console = true
+description = "This is a hybrid gateway that handles both production and sandbox token traffic."
+show_as_token_endpoint_url = true
+service_url = "https://localhost:${mgt.transport.https.port}/services/"
 username = "admin"
 password = "admin"
-create_admin_account = true</code></pre>
+ws_endpoint = "ws://localhost:9099"
+http_endpoint = "http://localhost:${http.nio.port}"
+https_endpoint = "https://localhost:${https.nio.port}"</code></pre>
                     </div>
                 </div>
                 <div class="doc-wrapper">
@@ -1077,10 +1085,10 @@ create_admin_account = true</code></pre>
                 <label class="tab-selector" for="_tab_8"><i class="icon fa fa-code"></i></label>
                 <div class="superfences-content">
                     <div class="mb-config-example">
-<pre><code class="toml">[super_admin]
-username = "admin"
-password = "admin"
-create_admin_account = true</code></pre>
+<pre><code class="toml">[apim.cache.gateway_token]
+enable = true
+expiry_time = "900s"
+</code></pre>
                     </div>
                 </div>
                 <div class="doc-wrapper">
@@ -1152,10 +1160,9 @@ create_admin_account = true</code></pre>
                 <label class="tab-selector" for="_tab_9"><i class="icon fa fa-code"></i></label>
                 <div class="superfences-content">
                     <div class="mb-config-example">
-<pre><code class="toml">[super_admin]
-username = "admin"
-password = "admin"
-create_admin_account = true</code></pre>
+<pre><code class="toml">[apim.cache.resource]
+enable = true
+expiry_time = "900s"</code></pre>
                     </div>
                 </div>
                 <div class="doc-wrapper">
