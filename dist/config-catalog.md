@@ -869,7 +869,7 @@ https_endpoint = "https://localhost:${https.nio.port}"</code></pre>
                                         
                                     </div>
                                     <div class="param-description">
-                                        <p>User can add any preferred value</p>
+                                        <p>User can add preferred values as the name.</p>
                                     </div>
                                 </div>
                             </div><div class="param">
@@ -909,7 +909,7 @@ https_endpoint = "https://localhost:${https.nio.port}"</code></pre>
                                         
                                     </div>
                                     <div class="param-description">
-                                        <p>Displays the env under the &#39;Try it&#39; in the API Store, in the API console.</p>
+                                        <p>Displays the environment under &#39;Try it&#39; in the API Store, in the API console.</p>
                                     </div>
                                 </div>
                             </div><div class="param">
@@ -928,7 +928,7 @@ https_endpoint = "https://localhost:${https.nio.port}"</code></pre>
                                         
                                     </div>
                                     <div class="param-description">
-                                        <p>Describe the function of the gateway.</p>
+                                        <p>Describe the function of the gateway here.</p>
                                     </div>
                                 </div>
                             </div><div class="param">
@@ -1023,7 +1023,7 @@ https_endpoint = "https://localhost:${https.nio.port}"</code></pre>
                                         
                                     </div>
                                     <div class="param-description">
-                                        <p>ex: ws://localhost:9099, [Same as HTTP]</p>
+                                        <p>E.g., ws://localhost:9099</p>
                                     </div>
                                 </div>
                             </div><div class="param">
@@ -1117,7 +1117,7 @@ expiry_time = "900s"
                                         
                                     </div>
                                     <div class="param-description">
-                                        <p>enable gateway token cache. Default recommendation is to specify this. The token validation request checks with the cached value.</p>
+                                        <p>Enable the gateway token cache. WSO2 recommends to enable this feature by default. The token validation request checks with the cached value.</p>
                                     </div>
                                 </div>
                             </div><div class="param">
@@ -1136,7 +1136,7 @@ expiry_time = "900s"
                                         
                                     </div>
                                     <div class="param-description">
-                                        <p>set cache expiry time. m for minutes. Recommended value for 15 minutes.</p>
+                                        <p>Set the cache expiry time in minutes. Recommended value is 15 minutes.</p>
                                     </div>
                                 </div>
                             </div>
@@ -1191,7 +1191,7 @@ expiry_time = "900s"</code></pre>
                                         
                                     </div>
                                     <div class="param-description">
-                                        <p>enable gateway resource cache. Caches the API resources at the GW. Expires in 15 mins.</p>
+                                        <p>Enable the gateway resource cache. Caches the API resources at the gateway. Expires in 15 minutes.</p>
                                     </div>
                                 </div>
                             </div>
@@ -1215,10 +1215,9 @@ expiry_time = "900s"</code></pre>
                 <label class="tab-selector" for="_tab_10"><i class="icon fa fa-code"></i></label>
                 <div class="superfences-content">
                     <div class="mb-config-example">
-<pre><code class="toml">[super_admin]
-username = "admin"
-password = "admin"
-create_admin_account = true</code></pre>
+<pre><code class="toml">[apim.cache.km_token]
+enable = false
+expiry_time = "15m"</code></pre>
                     </div>
                 </div>
                 <div class="doc-wrapper">
@@ -1247,7 +1246,7 @@ create_admin_account = true</code></pre>
                                         
                                     </div>
                                     <div class="param-description">
-                                        <p>enable KM token cache. The token validation request checks with the ached value at the KM. If the GW caching is on it is recommended to switch this off. Please see [Best Practices]</p>
+                                        <p>Enable the Key Manager token cache. The token validation request checks with the value cached at the Key Manager. At any given time you should only have one cache enabled, which is either the Key Manager cache or the API Gateway cache. WSO2 does not recommend using both caches at the same time.</p>
                                     </div>
                                 </div>
                             </div><div class="param">
@@ -1266,7 +1265,7 @@ create_admin_account = true</code></pre>
                                         
                                     </div>
                                     <div class="param-description">
-                                        <p>set the cache expiry time</p>
+                                        <p>Set the cache expiry time</p>
                                     </div>
                                 </div>
                             </div>
@@ -1290,10 +1289,8 @@ create_admin_account = true</code></pre>
                 <label class="tab-selector" for="_tab_11"><i class="icon fa fa-code"></i></label>
                 <div class="superfences-content">
                     <div class="mb-config-example">
-<pre><code class="toml">[super_admin]
-username = "admin"
-password = "admin"
-create_admin_account = true</code></pre>
+<pre><code class="toml">[apim.cache.recent_apis]
+enable = false</code></pre>
                     </div>
                 </div>
                 <div class="doc-wrapper">
@@ -1322,7 +1319,7 @@ create_admin_account = true</code></pre>
                                         
                                     </div>
                                     <div class="param-description">
-                                        <p>Enable cache for recently added apis in the API Store - Check with the new UI. Expires in 15 mins by default</p>
+                                        <p>Enable cache for recently added apis in the API Store. This expires in 15 minutes by default</p>
                                     </div>
                                 </div>
                             </div>
@@ -1378,7 +1375,7 @@ create_admin_account = true</code></pre>
                                         
                                     </div>
                                     <div class="param-description">
-                                        <p>Enabel cache for scopes. Expires in 15 mins by default.</p>
+                                        <p>Enabel cache for scopes. This expires in 15 minutes by default.</p>
                                     </div>
                                 </div>
                             </div>
@@ -1434,7 +1431,7 @@ create_admin_account = true</code></pre>
                                         
                                     </div>
                                     <div class="param-description">
-                                        <p>Enable cache for publisher roles. Expires in 15 mins by default</p>
+                                        <p>Enable cache for publisher roles. Expires in 15 minutes by default</p>
                                     </div>
                                 </div>
                             </div>
@@ -1490,7 +1487,7 @@ create_admin_account = true</code></pre>
                                         
                                     </div>
                                     <div class="param-description">
-                                        <p>Enable cache for publisher roles. Expires in 15 mins by default</p>
+                                        <p>Enable cache for publisher roles. Expires in 15 minutes by default</p>
                                     </div>
                                 </div>
                             </div>

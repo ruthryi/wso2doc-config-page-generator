@@ -301,7 +301,7 @@
                             "required": true,
                             "default": "Production and Sandbox",
                             "possible": "",
-                            "description": "User can add any preferred value"
+                            "description": "User can add preferred values as the name."
                         },
                         {
                             "name": "type",
@@ -317,7 +317,7 @@
                             "required": true,
                             "default": "TRUE",
                             "possible": "",
-                            "description": "Displays the env under the 'Try it' in the API Store, in the API console."
+                            "description": "Displays the environment under 'Try it' in the API Store, in the API console."
                         },
                         {
                             "name": "description",
@@ -325,7 +325,7 @@
                             "required": true,
                             "default": "This is a hybrid gateway that handles both production and sandbox token traffic.",
                             "possible": "",
-                            "description": "Describe the function of the gateway."
+                            "description": "Describe the function of the gateway here."
                         },
                         {
                             "name": "show_as_token_endpoint_url  ",
@@ -365,7 +365,7 @@
                             "required": true,
                             "default": "no default value",
                             "possible": "",
-                            "description": "ex: ws://localhost:9099, [Same as HTTP]"
+                            "description": "E.g., ws://localhost:9099"
                         },
                         {
                             "name": "https_endpoint",
@@ -402,7 +402,7 @@
                             "required": false,
                             "default": "TRUE",
                             "possible": "",
-                            "description": "enable gateway token cache. Default recommendation is to specify this. The token validation request checks with the cached value."
+                            "description": "Enable the gateway token cache. WSO2 recommends to enable this feature by default. The token validation request checks with the cached value."
                         },
                         {
                             "name": "expiry_time",
@@ -410,7 +410,7 @@
                             "required": false,
                             "default": "15 m",
                             "possible": "",
-                            "description": "set cache expiry time. m for minutes. Recommended value for 15 minutes."
+                            "description": "Set the cache expiry time in minutes. Recommended value is 15 minutes."
                         }
                     ]
                 }
@@ -431,7 +431,7 @@
                             "required": false,
                             "default": "TRUE",
                             "possible": "",
-                            "description": "enable gateway resource cache. Caches the API resources at the GW. Expires in 15 mins."
+                            "description": "Enable the gateway resource cache. Caches the API resources at the gateway. Expires in 15 minutes."
                         }
                     ]
                 }
@@ -452,7 +452,7 @@
                             "required": false,
                             "default": "FALSE",
                             "possible": "",
-                            "description": "enable KM token cache. The token validation request checks with the ached value at the KM. If the GW caching is on it is recommended to switch this off. Please see [Best Practices]"
+                            "description": "Enable the Key Manager token cache. The token validation request checks with the value cached at the Key Manager. At any given time you should only have one cache enabled, which is either the Key Manager cache or the API Gateway cache. WSO2 does not recommend using both caches at the same time."
                         },
                         {
                             "name": "expiry_time",
@@ -460,12 +460,12 @@
                             "required": false,
                             "default": "15 m",
                             "possible": "",
-                            "description": "set the cache expiry time"
+                            "description": "Set the cache expiry time"
                         }
                     ]
                 }
             ],
-            "exampleFile": "_super-admin.toml"
+            "exampleFile": "apim.cache.km_token.toml"
         },
         {
             "title": "Cache recent APIs",
@@ -481,12 +481,12 @@
                             "required": false,
                             "default": "FALSE",
                             "possible": "",
-                            "description": "Enable cache for recently added apis in the API Store - Check with the new UI. Expires in 15 mins by default"
+                            "description": "Enable cache for recently added apis in the API Store. This expires in 15 minutes by default"
                         }
                     ]
                 }
             ],
-            "exampleFile": "_super-admin.toml"
+            "exampleFile": "apim.cache.recent_apis.toml"
         },
         {
             "title": "Cache scopes",
@@ -502,7 +502,7 @@
                             "required": false,
                             "default": "TRUE",
                             "possible": "",
-                            "description": "Enabel cache for scopes. Expires in 15 mins by default."
+                            "description": "Enabel cache for scopes. This expires in 15 minutes by default."
                         }
                     ]
                 }
@@ -523,7 +523,7 @@
                             "required": false,
                             "default": "TRUE",
                             "possible": "",
-                            "description": "Enable cache for publisher roles. Expires in 15 mins by default"
+                            "description": "Enable cache for publisher roles. Expires in 15 minutes by default"
                         }
                     ]
                 }
@@ -544,7 +544,7 @@
                             "required": false,
                             "default": "TRUE",
                             "possible": "",
-                            "description": "Enable cache for publisher roles. Expires in 15 mins by default"
+                            "description": "Enable cache for publisher roles. Expires in 15 minutes by default"
                         }
                     ]
                 }
