@@ -63,6 +63,27 @@
             "exampleFile": "_primary-data-store.toml"
         },
         {
+            "title": "Enabling the H2 database console",
+            "options": [
+                {
+                    "name": "database_configuration",
+                    "required": false,
+                    "description": "Configurations required to enable browsing the H2 database from a web browser.",
+                    "params": [
+                        {
+                            "name": "enable_h2_console",
+                            "type": "boolean",
+                            "required": true,
+                            "default": "false",
+                            "possible": "true, false",
+                            "description": "True when required to browser the H2 database from a browser. False when not."
+                        }
+                    ]
+                }
+            ],
+            "exampleFile": "_enable_h2_console.toml"
+        },
+        {
             "title": "Database configurations",
             "options": [
                 {
@@ -716,7 +737,7 @@
                             "required": true,
                             "default": "tcp://localhost:7612",
                             "possible": "",
-                            "description": "list of server urls ex: analytics_url = [\"tcp: //localhost:7611, tcp://localhost:7611\"]\""
+                            "description": "list of server urls e.g.,: analytics_url = [\"tcp: //localhost:7611, tcp://localhost:7611\"]\""
                         },
                         {
                             "name": "analytics_auth_url",
@@ -724,7 +745,7 @@
                             "required": true,
                             "default": "ssl://localhost:7712",
                             "possible": "",
-                            "description": "list of auth server urls ex: analytics_auth_url = [\"ssl: //localhost:7711,ssl://localhost:7711\"]"
+                            "description": "list of auth server urls e.g.,: analytics_auth_url = [\"ssl: //localhost:7711,ssl://localhost:7711\"]"
                         },
                         {
                             "name": "type",
@@ -1247,7 +1268,7 @@
                             "required": false,
                             "default": "andes",
                             "possible": "",
-                            "description": "Define JMS type ex: andes"
+                            "description": "Define JMS type e.g.,: andes"
                         },
                         {
                             "name": "jms.java_naming_factory_initial",
